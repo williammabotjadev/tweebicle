@@ -5,6 +5,13 @@
 {% endblock %}
 {% block content %}
 <div class="main-left grid-x align-left">
-<h1>{{ my_handle }}</h1>
+<h6>Results for: <strong>{{ my_handle }}</strong></h6>
+<h6>Your User ID is: {{ user_id }}</h6>
+<div>
+    <img src="{{ user_obj.profile_image_url }}" alt="{{ name }}" width="100px" height="100px">
+    {{ user_obj.name }}
+    <span>Based on your Description you work at {{ user_obj.description[user_obj.description.index("@"):].split(" ")[0] }}</span>
+    <a href="#" class="text primary">Is this correct?</a>
+</div>
 </div>
     {% endblock %}

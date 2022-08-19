@@ -86,7 +86,13 @@ def analyze_handle():
     js_ref = os.path.join(app.config['JS_FOLDER'], 'app.js')
     foundation_js_ref = os.path.join(app.config['FOUNDATION_JS_FOLDER'], 'foundation.min.js')
     my_handle = request.form['my_handle']
-    return render_template('analyze-handle.html', my_handle=my_handle, icon_filename=icon_filename, css_ref=css_ref, js_ref=js_ref, foundation_js_ref=foundation_js_ref, style_ref=style_ref)
+    user = stream_api.get_user(username=my_handle)
+    user_id = user.data.id
+    user_obj = api.get_user(id=user_id)
+    # org_index = user_obj.description.find('@')
+    # org_found = user_obj.description[org_index+1:]
+    # org_called = org_found.split(' ')[0]
+    return render_template('analyze-handle.html', user_id=user_id, user_obj=user_obj, my_handle=my_handle, icon_filename=icon_filename, css_ref=css_ref, js_ref=js_ref, foundation_js_ref=foundation_js_ref, style_ref=style_ref)
 
 @app.route('/analyze_org', methods=["POST"])
 def analyze_org():
@@ -111,6 +117,6 @@ def analyze_org():
         
     return render_template('analyze-org.html', accounts_set=accounts_set, org_name=org_name, icon_filename=icon_filename, css_ref=css_ref, js_ref=js_ref, foundation_js_ref=foundation_js_ref, style_ref=style_ref)
 
-    @app.route('/follow_user', methods=["POST"]) 
-    def follow_user():
-        pass
+    # @app.route('/follow_user', methods=["POST"]) 
+    # def follow_user():
+    #     pass
