@@ -1,3 +1,5 @@
 Flask
 Flask-Login
 Flask-SQLAlchemy
+Flask_BCrypt
+Flask_Migrate
