@@ -48,3 +48,12 @@ def about():
     js_ref = os.path.join(app.config['JS_FOLDER'], 'app.js')
     foundation_js_ref = os.path.join(app.config['FOUNDATION_JS_FOLDER'], 'foundation.min.js')
     return render_template('about.html', icon_filename=icon_filename, css_ref=css_ref, js_ref=js_ref, foundation_js_ref=foundation_js_ref, style_ref=style_ref)
+
+@app.route('/dashboard')
+def dashboard():
+    icon_filename = os.path.join(app.config['UPLOAD_FOLDER'], 'tweebicle.png')
+    css_ref = os.path.join(app.config['CSS_FOLDER'], 'foundation.min.css')
+    style_ref = os.path.join(app.config['CSS_FOLDER'], 'app.css')
+    js_ref = os.path.join(app.config['JS_FOLDER'], 'app.js')
+    foundation_js_ref = os.path.join(app.config['FOUNDATION_JS_FOLDER'], 'foundation.min.js')
+    return render_template('dashboard.html', icon_filename=icon_filename, css_ref=css_ref, js_ref=js_ref, foundation_js_ref=foundation_js_ref, style_ref=style_ref)
