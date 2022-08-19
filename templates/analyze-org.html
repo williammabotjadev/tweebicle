@@ -5,67 +5,6 @@
 {% endblock %}
 {% block content %}
 <div class="main-left grid-x align-left">
-<h1 class="main-text">Welcome to your Tweebicle</h1>
-<p class="leading-text">
-    Organise your Professional life on Twitter. Don't miss out on the latest company or Industry related content.
-</p>
-<br>
-    <ul class="list-group">
-        <li class="list-group-item">Company Activity</li>
-        <li class="list-group-item">Connect with Colleagues</li>
-        <li class="list-group-item">Industry Activity</li>
-        <li class="list-group-item">Localized Business Activity</li>
-      </ul>
-</div>
-<div class="main-right grid-x align-center">
-<h1 class="main-text">Get Started</h1>
-
-<form>
-    <div class="grid-container">
-      <div class="grid-x grid-padding-x">
-        <div class="medium-6 cell">
-          <label>Fisrt Name
-            <input type="text" placeholder="Your Name">
-          </label>
-        </div>
-        <div class="medium-6 cell">
-          <label>Last Name
-            <input type="text" placeholder="Your Last Name">
-          </label>
-        </div>
-      </div>
-      <div class="grid-x grid-padding-x">
-        <div class="medium-6 cell">
-          <label>Email Address
-            <input type="email" placeholder="Your Email">
-          </label>
-        </div>
-        <div class="medium-6 cell">
-          <label>Mobile Number (Optional)
-            <input type="text" placeholder="Your Mobile Number">
-          </label>
-        </div>
-      </div>
-      <div class="grid-x grid-padding-x">
-        <div class="medium-6 cell">
-          <label>Password
-            <input type="password" placeholder="Password">
-          </label>
-        </div>
-        <div class="medium-6 cell">
-          <label>Confirm Password
-            <input type="password" placeholder="Repeat Password">
-          </label>
-        </div>
-      </div>
-      <div class="grid-x grid-padding-x align-center">
-        <div class="cell">
-            <a class="button large full-button small medium-expanded" href="#">Create Account</a>
-            <span class="text-center">Already registered? <a href="/login">Login</a></span>
-        </div>
-      </div>
-      
-    </div>
-  </form>
+<h1 class="main-text">{{ org_name }}</h1>
 </div>
     {% endblock %}

@@ -8,12 +8,16 @@
 <div class="grid-y align-center">
 <h2>Where Do we Start?</h2>
 <br>
+<form action="/analyze-handle" method="post">
 <h5 class="cell small-4" style="margin-left: 120px">What's your Twitter Handle?</h5>
 <input class="cell small-4" type="text" name="my_handle" id="myhandle" width="30%">
-<a class="button cell small-4" href="/analyze-handle">Analyze My Handle</a>
+<a class="button cell small-4">Analyze My Handle</a>
+</form>
 <br>
+<form action="/analyze-org" method="post">
 <h5 class="cell small-4" style="margin-left: 120px">Where Do you Work?</h5>
 <input class="cell small-4" type="text" name="org_name" id="orgname" width="30%">
-<a class="button cell small-4" href="/analyze-org">Analyze My Org</a>
+<button type="submit" class="button cell small-4">Analyze My Org</button>
+</form>
 </div>
     {% endblock %}

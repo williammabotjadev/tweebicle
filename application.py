@@ -58,20 +58,24 @@ def dashboard():
     foundation_js_ref = os.path.join(app.config['FOUNDATION_JS_FOLDER'], 'foundation.min.js')
     return render_template('dashboard.html', icon_filename=icon_filename, css_ref=css_ref, js_ref=js_ref, foundation_js_ref=foundation_js_ref, style_ref=style_ref)
 
-@app.route('/analyze-handle')
+@app.route('/analyze-handle', methods="POST")
 def analyze_handle():
     icon_filename = os.path.join(app.config['UPLOAD_FOLDER'], 'tweebicle.png')
     css_ref = os.path.join(app.config['CSS_FOLDER'], 'foundation.min.css')
     style_ref = os.path.join(app.config['CSS_FOLDER'], 'app.css')
     js_ref = os.path.join(app.config['JS_FOLDER'], 'app.js')
     foundation_js_ref = os.path.join(app.config['FOUNDATION_JS_FOLDER'], 'foundation.min.js')
-    return render_template('analyze-handle.html', icon_filename=icon_filename, css_ref=css_ref, js_ref=js_ref, foundation_js_ref=foundation_js_ref, style_ref=style_ref)
+    my_handle = request.form['my_handle']
+    print(my_handle)
+    return render_template('analyze-handle.html', my_handle=my_handle, icon_filename=icon_filename, css_ref=css_ref, js_ref=js_ref, foundation_js_ref=foundation_js_ref, style_ref=style_ref)
 
-@app.route('/analyze-org')
+@app.route('/analyze-org', methods="POST")
 def analyze_org():
     icon_filename = os.path.join(app.config['UPLOAD_FOLDER'], 'tweebicle.png')
     css_ref = os.path.join(app.config['CSS_FOLDER'], 'foundation.min.css')
     style_ref = os.path.join(app.config['CSS_FOLDER'], 'app.css')
     js_ref = os.path.join(app.config['JS_FOLDER'], 'app.js')
     foundation_js_ref = os.path.join(app.config['FOUNDATION_JS_FOLDER'], 'foundation.min.js')
-    return render_template('analyze-org.html', icon_filename=icon_filename, css_ref=css_ref, js_ref=js_ref, foundation_js_ref=foundation_js_ref, style_ref=style_ref)
+    org_name = request.form['org_name']
+    print(org_name)
+    return render_template('analyze-org.html', org_name=org_name, icon_filename=icon_filename, css_ref=css_ref, js_ref=js_ref, foundation_js_ref=foundation_js_ref, style_ref=style_ref)
