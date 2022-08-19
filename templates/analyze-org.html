@@ -4,7 +4,24 @@
 {{ super() }}
 {% endblock %}
 {% block content %}
-<div class="main-left grid-x align-left">
-<h1 class="main-text">{{ org_name }}</h1>
+<div class="grid-x align-left">
+<div style="display: block">
+<span>Results for :</span><h6 class="main-text">@{{ org_name }}</h6>
+</div>
+{% for item in accounts_set %}
+<div class="cell small-6 medium-6 large-4">
+<div class="card">
+<img src="{{ item.profile_image_url }}" alt="{{ item.name }}" width="100px" height="100px">
+<h6>Name : {{ item.name }}</h6>
+<h6>Handle : {{ item.screen_name }}</h6>
+<h6>Followers : {{ item.followers_count }}</h6>
+<h6>Tweets : {{ item.statuses_count }}</h6>
+<h6>Location : {{ item.location }}</h6>
+<h6>Description : {{ item.description }}</h6>
+<h6>URL : {{ item.url }}</h6>
+<a href="{{ url_for('follow_user', handle=item.screen_name) }}" class="button">Follow</a>
+  </div>
+  </div>
+{% endfor %}
 </div>
     {% endblock %}

@@ -5,6 +5,9 @@ import json
 import numpy as np
 import os
 
+from dotenv import load_dotenv
+load_dotenv()
+
 app = Flask(__name__)
 
 consumer_key = os.getenv('CONSUMER_KEY')
@@ -20,6 +23,14 @@ app.config['UPLOAD_FOLDER'] = img_folder
 app.config['CSS_FOLDER'] = css_folder
 app.config['JS_FOLDER'] = js_folder
 app.config['FOUNDATION_JS_FOLDER'] = foundation_js_folder
+
+auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
+
+stream_api = Api(consumer_key=consumer_key, consumer_secret=consumer_secret, access_token=access_token, access_secret=access_token_secret)
+  
+auth.set_access_token(access_token, access_token_secret)
+  
+api = tweepy.API(auth, parser=tweepy.parsers.JSONParser())
 
 @app.route('/')
 def index():
@@ -85,4 +96,21 @@ def analyze_org():
     js_ref = os.path.join(app.config['JS_FOLDER'], 'app.js')
     foundation_js_ref = os.path.join(app.config['FOUNDATION_JS_FOLDER'], 'foundation.min.js')
     org_name = request.form['org_name']
-    return render_template('analyze-org.html', org_name=org_name, icon_filename=icon_filename, css_ref=css_ref, js_ref=js_ref, foundation_js_ref=foundation_js_ref, style_ref=style_ref)
+    tweets = api.search_tweets(q=org_name, count=100)
+    related_accounts = []
+
+    for item in tweets["statuses"]:
+        for i in item['entities']['user_mentions']:
+            related_accounts.append(api.get_user(id=i['id']))
+
+    accounts_set = []
+
+    for item in related_accounts:
+        if accounts_set.count(item) <= 0:
+            accounts_set.append(item)
+        
+    return render_template('analyze-org.html', accounts_set=accounts_set, org_name=org_name, icon_filename=icon_filename, css_ref=css_ref, js_ref=js_ref, foundation_js_ref=foundation_js_ref, style_ref=style_ref)
+
+    @app.route('/follow_user', methods=["POST"]) 
+    def follow_user():
+        pass

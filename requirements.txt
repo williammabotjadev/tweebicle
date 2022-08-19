@@ -6,3 +6,4 @@ Flask_Migrate
 tweepy
 pytwitter
 numpy
+python-dotenv
