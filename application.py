@@ -58,7 +58,7 @@ def dashboard():
     foundation_js_ref = os.path.join(app.config['FOUNDATION_JS_FOLDER'], 'foundation.min.js')
     return render_template('dashboard.html', icon_filename=icon_filename, css_ref=css_ref, js_ref=js_ref, foundation_js_ref=foundation_js_ref, style_ref=style_ref)
 
-@app.route('/analyze-handle', methods="POST")
+@app.route('/analyze_handle', methods=["POST"])
 def analyze_handle():
     icon_filename = os.path.join(app.config['UPLOAD_FOLDER'], 'tweebicle.png')
     css_ref = os.path.join(app.config['CSS_FOLDER'], 'foundation.min.css')
@@ -69,7 +69,7 @@ def analyze_handle():
     print(my_handle)
     return render_template('analyze-handle.html', my_handle=my_handle, icon_filename=icon_filename, css_ref=css_ref, js_ref=js_ref, foundation_js_ref=foundation_js_ref, style_ref=style_ref)
 
-@app.route('/analyze-org', methods="POST")
+@app.route('/analyze_org', methods=["POST"])
 def analyze_org():
     icon_filename = os.path.join(app.config['UPLOAD_FOLDER'], 'tweebicle.png')
     css_ref = os.path.join(app.config['CSS_FOLDER'], 'foundation.min.css')
