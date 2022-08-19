@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+{% block title %}Tweebicle{% endblock %}
+{% block head %}
+{{ super() }}
+{% endblock %}
+{% block content %}
+
+
+<div class="grid-y align-center">
+<br>
+<h1 class="text-center">Get Started</h1>
+<br>
+<form>
+    <div class="grid-container">
+      <div class="grid-x grid-padding-x">
+        <div class="medium-6 cell">
+          <label>Fisrt Name
+            <input type="text" placeholder="Your Name">
+          </label>
+        </div>
+        <div class="medium-6 cell">
+          <label>Last Name
+            <input type="text" placeholder="Your Last Name">
+          </label>
+        </div>
+      </div>
+      <div class="grid-x grid-padding-x">
+        <div class="medium-6 cell">
+          <label>Email Address
+            <input type="email" placeholder="Your Email">
+          </label>
+        </div>
+        <div class="medium-6 cell">
+          <label>Mobile Number (Optional)
+            <input type="text" placeholder="Your Mobile Number">
+          </label>
+        </div>
+      </div>
+      <div class="grid-x grid-padding-x">
+        <div class="medium-6 cell">
+          <label>Password
+            <input type="password" placeholder="Password">
+          </label>
+        </div>
+        <div class="medium-6 cell">
+          <label>Confirm Password
+            <input type="password" placeholder="Repeat Password">
+          </label>
+        </div>
+      </div>
+      <div class="grid-x grid-padding-x align-center">
+        <div class="cell">
+            <a class="button large full-button small medium-expanded" href="#">Create Account</a>
+            <span class="text-center">Already registered? <a href="/login">Login</a></span>
+        </div>
+      </div>
+      
+    </div>
+  </form>
+</div>
+    {% endblock %}

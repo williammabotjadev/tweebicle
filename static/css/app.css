@@ -1,0 +1,171 @@
+.heading-font {
+    color: #1DA1F2;
+}
+
+
+.responsive-blog-footer {
+    background: #4a4a4a;
+    padding: 3rem 3rem;
+    color: white;
+}
+
+@media screen and (max-width: 39.9375em) {
+    .responsive-blog-footer h4 {
+        font-size: 1.5rem;
+    }
+}
+
+.responsive-blog-footer p {
+    color: #8a8a8a;
+}
+
+.responsive-blog-footer .mailing-list {
+    margin-bottom: 1.5rem;
+}
+
+.responsive-blog-footer .mailing-container {
+    margin-bottom: 2rem;
+}
+
+.responsive-blog-footer .about-section,
+.responsive-blog-footer .tag-section {
+    margin-bottom: 2rem;
+}
+
+.responsive-blog-footer .about-section a,
+.responsive-blog-footer .tag-section a {
+    color: #1779ba;
+}
+
+.responsive-blog-footer .subscribe-button {
+    background-color: #1779ba;
+}
+
+.responsive-blog-footer .subscribe-button:hover {
+    background-color: #146aa3;
+    transition: color 0.3s ease-in;
+}
+
+.responsive-blog-footer .fa-chevron-circle-up {
+    font-size: 3rem;
+    color: #8a8a8a;
+}
+
+.responsive-blog-footer .fa-chevron-circle-up:hover {
+    color: #b0b0b0;
+    transition: color 0.3s ease-in;
+}
+
+footer {
+    width: 100%;
+    margin: 0;
+    position: fixed;
+    bottom: 0;
+    background: #4a4a4a;
+}
+
+.footer-text {
+    text-align: center;
+}
+
+.main-text {
+    margin: 20px;
+}
+
+.about-main-text {
+    margin: 20px;
+}
+
+.leading-text {
+    margin: 20px;
+}
+
+.main-list {
+    margin: 20px;
+}
+
+
+.list-group {
+    margin-bottom: 1rem;
+    border: 1px solid #e6e6e6;
+    border-radius: 0;
+    background: #fefefe;
+    box-shadow: none;
+    overflow: hidden;
+    color: #0a0a0a;
+    width: 100%;
+}
+
+.list-group> :last-child {
+    margin-bottom: 0;
+}
+
+.list-group-item {
+    padding: 1rem;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.list-group-item> :last-child {
+    margin-bottom: 0;
+    border-bottom: none;
+}
+
+.list-group-item.active {
+    color: #fefefe;
+    background-color: #1779ba;
+    border-color: 1px solid #1779ba;
+}
+
+.list-group-item:hover,
+.list-group-item:focus {
+    background-color: #e6e6e6;
+}
+
+.list-group-item:hover.active,
+.list-group-item:focus.active {
+    background-color: #1779ba;
+}
+
+.list-group-item.disabled,
+.list-group-item.disabled:hover,
+.list-group-item.disabled:focus,
+.list-group-item[disabled],
+.list-group-item[disabled]:hover,
+.list-group-item[disabled]:focus {
+    color: #8a8a8a;
+    cursor: not-allowed;
+    background-color: #fefefe;
+}
+
+.main-left {
+    width: 50%;
+    float: left;
+    padding: 20px;
+}
+
+.main-right {
+    width: 50%;
+    float: right;
+    padding: 20px;
+}
+
+.about-main-right {
+    width: 50%;
+    float: right;
+    padding: 20px;
+}
+
+.about-main-left {
+    width: 50%;
+    float: left;
+    padding: 20px;
+}
+
+.full-button {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.login-container {
+    width: 30%;
+}

@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+{% block title %}Tweebicle{% endblock %}
+{% block head %}
+{{ super() }}
+{% endblock %}
+{% block content %}
+
+
+<div class="grid-y align-center">
+<br>
+<h1 class="text-center">Login</h1>
+<br>
+<form>
+    <div class="grid-container login-container">
+      <div class="grid-y grid-padding-y">
+        
+        
+      
+          <label>Email Address
+            <input type="email" placeholder="Your Email">
+          </label>
+        
+        
+     
+          <label>Password
+            <input type="password" placeholder="Password">
+          </label>
+    
+        
+      </div>
+      <div class="grid-x grid-padding-x align-center">
+        <div class="cell">
+            <a class="button large full-button small medium-expanded" href="#">Login to Your Account</a>
+            <span class="text-center">Not yet registered? <a href="/register">Register</a></span>
+        </div>
+      </div>
+      
+    </div>
+  </form>
+</div>
+    {% endblock %}

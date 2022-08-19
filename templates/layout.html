@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{{ icon_filename }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ css_ref }}">
+    <link rel="stylesheet" href="{{ style_ref }}">
+    <title>{% block title %}{% endblock %} | Professional Twitter</title>
+    {% endblock %}
+</head>
+<body>
+   <nav class="top-bar">
+    <div class="grid-x grid-padding-x align-middle top-bar-right">
+        <a class="cell small-1" href="/"><img width="150%" src="{{ icon_filename }}" alt="icon"></a>
+        <h3 class="cell small-1 menu-text heading-font">Tweebicle</h3>
+    </div>
+    <ul class="top-bar-left align-middle align-right vertical medium-horizontal dropdown menu">
+        <li><a href="/"><i class="fi-list"></i> <span>Home</span></a></li>
+        <li><a href="/register"><i class="fi-list"></i> <span>Sign Up</span></a></li>
+        <li><a href="/login"><i class="fi-list"></i> <span>Login</span></a></li>
+        <li><a href="/about"><i class="fi-list"></i> <span>About Us</span></a></li>
+      </ul>
+    </nav>
+    <div id="grid-x grid-padding-x small-up-2 medium-up-4 large-up-6">{% block content %}{% endblock %}</div>
+    <footer id="footer" class="grid-x footer responsive-blog-footer">
+        {% block footer %}
+        <span>&copy; Copyright 2022 by <a href="https://twitter.com/mabotja_william">William Mabotja</a>.</span>
+        {% endblock %}
+    </footer>
+    <script src="{{ js_ref }}"></script>
+    <script src="{{ foundation_js_ref }}"></script>
+</body>
+</html>
