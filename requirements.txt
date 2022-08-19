@@ -3,3 +3,6 @@ Flask-Login
 Flask-SQLAlchemy
 Flask_BCrypt
 Flask_Migrate
+tweepy
+pytwitter
+numpy
